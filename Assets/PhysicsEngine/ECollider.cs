@@ -8,6 +8,11 @@ public class ECollider : MonoBehaviour
 	public ERigidbody MyRigidbody { get; private set; }
 
 
+	private void Awake()
+	{
+		MyRigidbody = GetComponent<ERigidbody>();
+	}
+
 	private Vector3 GetCenter()
 	{
 		return transform.position + transform.rotation * _offset;

@@ -63,10 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\PhysicsEngine\EAABB.cs" />
     <Compile Include="Assets\PhysicsEngine\ECollider.cs" />
     <Compile Include="Assets\PhysicsEngine\ECollisionHandler.cs" />
+    <Compile Include="Assets\PhysicsEngine\ERadialImpulse.cs" />
     <Compile Include="Assets\PhysicsEngine\ERigidbody.cs" />
+    <Compile Include="Assets\PhysicsEngine\ESetTimeScale.cs" />
     <Compile Include="Assets\PhysicsEngine\ESphereCollider.cs" />
+    <Compile Include="Assets\PhysicsEngine\EVector3.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files (x86)/UnityEditor/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

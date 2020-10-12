@@ -2,28 +2,45 @@
 
 public class ECollisionHandler : MonoBehaviour
 {
-	[SerializeField] private ECollider[] _activeColliders;
+	private ECollider[] _activeColliders;
+
+
+	private void Start()
+	{
+		_activeColliders = FindObjectsOfType<ECollider>();
+	}
 
 	private void FixedUpdate()
 	{
 		for (int a = 0; a < _activeColliders.Length; a++)
 		{
+			ECollider c1 = _activeColliders[a];
 			for (int b = a + 1; b < _activeColliders.Length; b++)
 			{
-				if(CheckForIntersectionBetween(_activeColliders[a], _activeColliders[b]))
+				ECollider c2 = _activeColliders[b];
+
+				if(CheckForIntersectionBetween(c1, c2))
 				{
 					Debug.Log("is intersecting");
-
+					ResolveCollisionFor(c1, c2);
+				}
+				else
+				{
+					Debug.Log("Is not intersecting between ");
 				}
 			}
 		}
 	}
 
-	private void ResolveCollisionFor(ESphereCollider c1, ESphereCollider c2)
+	private void ResolveCollisionFor(ECollider c1, ECollider c2)
 	{
 		if(c1 is ESphereCollider && c2 is ESphereCollider)
 		{
 			ResolveCollisionForSpheres((ESphereCollider)c1, (ESphereCollider)c2);
+		}
+		else
+		{
+			throw new System.NotImplementedException("Collision resolution between collider types unknown");
 		}
 	}
 
@@ -45,16 +62,20 @@ public class ECollisionHandler : MonoBehaviour
 
 			c2.Center = c1.Center + normal * (c1.Radius + c2.Radius);
 		}
+		else
+		{
+			throw new System.NotImplementedException("Resolution without 2 Rigidbodies is not implemented");
+		}
 	}
 
 	private bool CheckForIntersectionBetween(ECollider c1, ECollider c2)
 	{
 		if(c1 is ESphereCollider && c2 is ESphereCollider)
 		{
-			CheckForIntersectionBetweenSpheres((ESphereCollider)c1, (ESphereCollider)c2);
+			return CheckForIntersectionBetweenSpheres((ESphereCollider)c1, (ESphereCollider)c2);
 		}
 
-		return false;
+		throw new System.NotImplementedException("Intersection between collider types unknown");
 	}
 
 	private bool CheckForIntersectionBetweenSpheres(ESphereCollider s1, ESphereCollider s2)
