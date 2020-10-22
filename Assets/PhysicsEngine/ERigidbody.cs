@@ -3,11 +3,13 @@
 public class ERigidbody : MonoBehaviour
 {
 	[SerializeField] private bool _enableGravity = true;
-	[SerializeField] private float _mass = 1;
+	[SerializeField] private float _mass = 1.0f;
 	[SerializeField] private Vector3 _velocity;
 	
 	public float Mass { get => _mass; }
+	public bool EnableGravity { get => _enableGravity; }
 	public Vector3 Velocity { get => _velocity; set => _velocity = value; }
+
 
 	private void FixedUpdate()
 	{

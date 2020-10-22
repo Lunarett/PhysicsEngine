@@ -614,11 +614,11 @@
     <Reference Include="Unity.Timeline">
       <HintPath>D:/GIT/SimplePhysicsEngine/PhysicsEngine/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/GIT/SimplePhysicsEngine/PhysicsEngine/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/GIT/SimplePhysicsEngine/PhysicsEngine/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>D:/GIT/SimplePhysicsEngine/PhysicsEngine/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/GIT/SimplePhysicsEngine/PhysicsEngine/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

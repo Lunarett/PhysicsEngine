@@ -19,7 +19,7 @@ public class ECollisionHandler : MonoBehaviour
 			{
 				ECollider c2 = _activeColliders[b];
 
-				if(CheckForIntersectionBetween(c1, c2))
+				if(CheckForIntersectionBetween(c1, c2) && c1.MyRigidbody.EnableGravity && c2.MyRigidbody.EnableGravity)
 				{
 					Debug.Log("is intersecting");
 					ResolveCollisionFor(c1, c2);
